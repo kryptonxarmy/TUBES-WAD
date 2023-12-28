@@ -28,5 +28,15 @@ Route::get('/dashboardmahasiswa', function () {
     return view('/Mahasiswa/dashboard');
 });
 
-Route::get('/Kaprodi', [StudentController::class, 'dashboard'])->name('Kaprodi.dashboard');
-Route::post('/showroom/data', [StudentController::class, 'data'])->name('kaprodi.data');
+Route::get('/dashboardkaprodi', [StudentController::class, 'index'])->name('Kaprodi.dashboard');
+Route::post('/Kaprodi/data', [StudentController::class, 'data'])->name('kaprodi.data');
+Route::delete('/dashboardkaprodi/{id}', [StudentController::class, 'delete'])->name('Kaprodi.deleteStudent');
+
+// routes/web.php
+
+Route::get('/dashboardkaprodi/edit/{id}', [StudentController::class, 'edit'])->name('Kaprodi.editStudent');
+Route::put('/dashboardkaprodi/update/{id}', [StudentController::class, 'edit'])->name('kaprodi.updateStudent');
+
+Route::get('/dashboardkaprodi', [StudentController::class, 'index'])->name('kaprodi.dashboard');
+
+

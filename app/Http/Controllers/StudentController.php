@@ -8,16 +8,45 @@ use Illuminate\Http\Request;
 class StudentController extends Controller
 {
     public function index(){
-        $Kaprodi = Student::all(); 
-        return view('Kaprodi.Dashboard', compact('Kaprodi')); 
+        $students = Student::all();
+        return view('Kaprodi.dashboard', compact('students'));
     }
 
     public function create()
     {
-        return view('Kaprodi.inputfile'); 
+        return view('Kaprodi.inputfile');
     }
 
-    
+    public function delete($id){
+    $student = Student::findOrFail($id);
+    $student->delete();
+
+    return redirect()->route('Kaprodi.dashboard')->with('success', 'Student deleted successfully');
+    }
+
+    // StudentController.php
+
+    public function edit($id)
+{
+    $student = Student::findOrFail($id);
+    return view('Kaprodi.updatestudent', compact('student'));
+}
+public function update(Request $request, $id)
+{
+    $request->validate([
+        'Nama_Mahasiswa' => 'required',
+        'NIM' => 'required',
+        'Kelas' => 'required',
+        'Angkatan' => 'required',
+    ]);
+
+    $student = Student::findOrFail($id);
+    $student->update($request->all());
+
+    return redirect()->route('Kaprodi.dashboard')->with('success', 'Student updated successfully');
+}
+
+
     public function data(Request $request)
     {
         $data = $request->all();
@@ -28,6 +57,6 @@ class StudentController extends Controller
             'Angkatan' => $data['angkatan']
         ]);
 
-        return redirect(route('kaprodi.dashboard'));
+        return redirect(route('Kaprodi.dashboard'));
     }
 }

@@ -11,6 +11,8 @@ class Student extends Model
 
     protected $table = "students";
 
+    // protected $namespace = 'App\Http\Controllers';
+
     protected $fillable = [
         'id', 'Nama_Mahasiswa', 'NIM', 'Kelas', 'Angkatan', 'created_at', 'update_at'
     ];

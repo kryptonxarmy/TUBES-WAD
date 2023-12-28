@@ -68,6 +68,7 @@ $rows = [['id' => 1, 'nama' => 'Ilham Satria', 'nim' => '1201234567', 'kelas' =>
             <div class="overflow-x-auto bg-white rounded-xl" data-theme="light">
                 <table class="table table-zebra">
                     {{-- head --}}
+                    {{-- (count($students) > 0) --}}
                     <thead>
                         <tr class="text-center text-black font-extrabold">
                             <th>No</th>
@@ -79,24 +80,29 @@ $rows = [['id' => 1, 'nama' => 'Ilham Satria', 'nim' => '1201234567', 'kelas' =>
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach ($rows as $row)
+                        @foreach ($students as $student)
                             <tr class="text-center">
-                                <th>{{ $row['id'] }}</th>
-                                <td>{{ $row['nama'] }}</td>
-                                <td>{{ $row['nim'] }}</td>
-                                <td>{{ $row['kelas'] }}</td>
-                                <td>{{ $row['angkatan'] }}</td>
+                                <th>{{ $loop->iteration }}</th>
+                                <td>{{ $student['Nama_Mahasiswa'] }}</td>
+                                <td>{{ $student['NIM'] }}</td>
+                                <td>{{ $student['Kelas'] }}</td>
+                                <td>{{ $student['Angkatan'] }}</td>
                                 <td>
-                                    <button className=" mx-2 text-xl">
+                                    <a href="{{ route('Kaprodi.editStudent', $student->id) }}" class="mx-2 text-xl">
+                                        {{-- UPDATE BUTTON --}}
                                         <span class="material-symbols-outlined text-[#624DE3]">
                                             edit_square
                                         </span>
-                                    </button>
-                                    <button className="mx-2 text-xl">
-                                        <span class="material-symbols-outlined text-[#A30D11]">
-                                            delete
-                                        </span>
-                                    </button>
+                                    </a>
+                                    <form action="{{ route('Kaprodi.deleteStudent', $student->id) }}" method="post">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button type="submit" class="mx-2 text-xl">
+                                            <span class="material-symbols-outlined text-[#A30D11]">
+                                                delete
+                                            </span>
+                                        </button>
+                                    </form>
                                 </td>
                             </tr>
                         @endforeach
