@@ -50,7 +50,7 @@ public function updateStudent(Request $request, $id)
     $student->update($request->all());
 
     // return redirect()->route('Kaprodi.inputfile')->with('success', 'Student updated successfully');
-    dd($student)->$request->toArray();
+    // dd($student)->$request->toArray();
     return redirect()->route('Kaprodi.dashboard')->with('success',"Data telah disimpan");
 }
 
@@ -59,10 +59,10 @@ public function updateStudent(Request $request, $id)
     {
         $data = $request->all();
         Student::create([
-            'Nama_Mahasiswa' => $data['nama_mahasiswa'],
-            'NIM' => $data['nim'],
-            'Kelas' => $data['kelas'],
-            'Angkatan' => $data['angkatan']
+            'Nama_Mahasiswa' => $data['Nama_Mahasiswa'],
+            'NIM' => $data['NIM'],
+            'Kelas' => $data['Kelas'],
+            'Angkatan' => $data['Angkatan']
         ]);
 
         return redirect(route('Kaprodi.dashboard'));

@@ -35,7 +35,7 @@ Route::delete('/dashboardkaprodi/{id}', [StudentController::class, 'delete'])->n
 // routes/web.php
 
 Route::get('/dashboardkaprodi/edit/{id}', [StudentController::class, 'edit'])->name('kaprodi.edit');
-Route::post('/dashboardkaprodi/updateStudent/{id}', [StudentController::class, 'updateStudent'])->name('kaprodi.updateStudent');
+Route::post('/dashboardkaprodi/updateStudent/{id}', [StudentController::class, 'updateStudent'])->name('updateStudent');
 
 
 Route::get('/dashboardkaprodi', [StudentController::class, 'index'])->name('Kaprodi.dashboard');
