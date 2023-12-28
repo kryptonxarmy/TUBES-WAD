@@ -57,7 +57,9 @@ $rows = [['id' => 1, 'nama' => 'Ilham Satria', 'nim' => '1201234567', 'kelas' =>
 
                 </div>
                 <div class="flex gap-2 items-center">
-                    <button class="btn btn-sm bg-green-400">Tambah Mahasiswa</button>
+                    <a href="/dashboardkaprodi/inputfile">
+                        <button class="btn btn-sm bg-green-400">Tambah Mahasiswa</button>
+                    </a>
                 </div>
             </div>
             {{-- {/* ATAS */} --}}
@@ -85,11 +87,6 @@ $rows = [['id' => 1, 'nama' => 'Ilham Satria', 'nim' => '1201234567', 'kelas' =>
                                 <td>{{ $row['kelas'] }}</td>
                                 <td>{{ $row['angkatan'] }}</td>
                                 <td>
-                                    <button className=" mx-2 hover:cursor-pointer text-xl">
-                                        <span class="material-symbols-outlined text-[#1F9254]">
-                                            add_box
-                                        </span>
-                                    </button>
                                     <button className=" mx-2 text-xl">
                                         <span class="material-symbols-outlined text-[#624DE3]">
                                             edit_square

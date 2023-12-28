@@ -16,8 +16,11 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('/dashboardKaprodi', function () {
+Route::get('/dashboardkaprodi', function () {
     return view('/Kaprodi/dashboard');
+});
+Route::get('/dashboardkaprodi/inputfile', function () {
+    return view('/Kaprodi/inputfile');
 });
 Route::get('/dashboardmahasiswa', function () {
     return view('/Mahasiswa/dashboard');
