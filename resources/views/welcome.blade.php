@@ -51,7 +51,7 @@
                             required />
                     </div>
                     <div class="w-[80%] mx-auto gap-4 flex flex-col">
-                        <a type="submit" href="/dashboardKaprodi"
+                        <a type="submit" href="/dashboardkaprodi"
                             class="bg-[#4680FF] text-center text-white py-2 rounded-xl">
                             Log in
                         </a>

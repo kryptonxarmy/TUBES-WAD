@@ -18,7 +18,7 @@
                     arrow_back
                 </span>
             </a>
-            <form action="" class="w-full flex flex-col items-center" method="post">
+            <form action="{{ route('kaprodi.data') }}" class="w-full flex flex-col items-center" method="POST" enctype="multipart/form-data">
                 @csrf
                 <h1 class="text-2xl font-bold mb-4">Input Data Mahasiswa</h1>
                 <div class="mb-4 w-[60%]">

@@ -12,6 +12,6 @@ class Student extends Model
     protected $table = "students";
 
     protected $fillable = [
-        'id', 'Nama', 'NIM', 'Kelas', 'Angkatan', 'created_at', 'update_at'
+        'id', 'Nama_Mahasiswa', 'NIM', 'Kelas', 'Angkatan', 'created_at', 'update_at'
     ];
 }
