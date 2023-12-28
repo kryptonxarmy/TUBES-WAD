@@ -18,7 +18,7 @@
                     arrow_back
                 </span>
             </a>
-            <form action="{{ route('kaprodi.updateStudent', $student->id) }}" method="POST" enctype="multipart/form-data" class="w-full flex flex-col items-center">
+            <form action="{{ route('kaprodi.edit', $student->id) }}" method="POST" enctype="multipart/form-data" class="w-full flex flex-col items-center">
                 @csrf
                 @method('PUT')
                 <h1 class="text-2xl font-bold mb-4">Update Data Mahasiswa</h1>
