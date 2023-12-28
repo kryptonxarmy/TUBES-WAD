@@ -13,7 +13,7 @@
     <div class="bg-[#E7ECEF] h-[200vh] flex-col flex gap-6" data-theme="light">
         @include('components.navbar')
         <div class="mt-[7em] bg-red-400">
-            <form action="" class="" method="post">
+            <form action="{{ route('kaprodi.data') }}" class="" method="POST" enctype="multipart/form-data">
                 <div class="w-full mx-auto">
                     @csrf
                     <h1 class="text-2xl font-bold mb-4">Input Data Mahasiswa</h1>

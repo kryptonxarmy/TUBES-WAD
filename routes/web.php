@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\StudentController;
+use App\Models\Student;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -25,3 +27,6 @@ Route::get('/dashboardkaprodi/inputfile', function () {
 Route::get('/dashboardmahasiswa', function () {
     return view('/Mahasiswa/dashboard');
 });
+
+Route::get('/Kaprodi', [StudentController::class, 'dashboard'])->name('Kaprodi.dashboard');
+Route::post('/showroom/data', [StudentController::class, 'data'])->name('kaprodi.data');
