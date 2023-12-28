@@ -31,19 +31,27 @@ class StudentController extends Controller
     $student = Student::findOrFail($id);
     return view('Kaprodi.updatestudent', compact('student'));
 }
-public function update(Request $request, $id)
+
+public function updateStudent(Request $request, $id)
 {
-    $request->validate([
-        'Nama_Mahasiswa' => 'required',
-        'NIM' => 'required',
-        'Kelas' => 'required',
-        'Angkatan' => 'required',
-    ]);
+    // $data = Student::find($id);
+    // $data->update($request->all());
+
+    // $request->validate([
+    //     'Nama_Mahasiswa' => 'required',
+    //     'NIM' => 'required',
+    //     'Kelas' => 'required',
+    //     'Angkatan' => 'required',
+    // ]);
+
+    // dd('Validation passed');
 
     $student = Student::findOrFail($id);
     $student->update($request->all());
 
-    return redirect()->route('Kaprodi.dashboard')->with('success', 'Student updated successfully');
+    // return redirect()->route('Kaprodi.inputfile')->with('success', 'Student updated successfully');
+    dd($student)->$request->toArray();
+    return redirect()->route('Kaprodi.dashboard')->with('success',"Data telah disimpan");
 }
 
 
