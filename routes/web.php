@@ -38,6 +38,6 @@ Route::get('/dashboardkaprodi/edit/{id}', [StudentController::class, 'edit'])->n
 Route::put('/dashboardkaprodi/update/{id}', 'StudentController@edit')->name('Kaprodi.edit');
 
 
-Route::get('/dashboardkaprodi', [StudentController::class, 'index'])->name('kaprodi.dashboard');
+Route::get('/dashboardkaprodi', [StudentController::class, 'index'])->name('Kaprodi.dashboard');
 
 
