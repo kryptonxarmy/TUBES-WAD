@@ -18,10 +18,10 @@ class StudentController extends Controller
     }
 
     public function delete($id){
-    $student = Student::findOrFail($id);
-    $student->delete();
+        $student = Student::findOrFail($id);
+        $student->delete();
 
-    return redirect()->route('Kaprodi.dashboard')->with('success', 'Student deleted successfully');
+        return redirect()->route('Kaprodi.dashboard')->with('success', 'Student deleted successfully');
     }
 
     // StudentController.php
@@ -33,17 +33,12 @@ class StudentController extends Controller
 }
 public function update(Request $request, $id)
 {
-    $request->validate([
-        'Nama_Mahasiswa' => 'required',
-        'NIM' => 'required',
-        'Kelas' => 'required',
-        'Angkatan' => 'required',
-    ]);
 
     $student = Student::findOrFail($id);
     $student->update($request->all());
 
     return redirect()->route('Kaprodi.dashboard')->with('success', 'Student updated successfully');
+    
 }
 
 
@@ -51,10 +46,10 @@ public function update(Request $request, $id)
     {
         $data = $request->all();
         Student::create([
-            'Nama_Mahasiswa' => $data['nama_mahasiswa'],
-            'NIM' => $data['nim'],
-            'Kelas' => $data['kelas'],
-            'Angkatan' => $data['angkatan']
+            'Nama_Mahasiswa' => $data['Nama_Mahasiswa'],
+            'NIM' => $data['NIM'],
+            'Kelas' => $data['Kelas'],
+            'Angkatan' => $data['Angkatan']
         ]);
 
         return redirect(route('Kaprodi.dashboard'));
