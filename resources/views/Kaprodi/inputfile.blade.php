@@ -24,22 +24,22 @@
                 <div class="mb-4 w-[60%]">
                     <label for="nama_mahasiswa" class="block text-sm font-bold text-black">Nama
                         Mahasiswa</label>
-                    <input type="text" id="nama_mahasiswa" name="nama_mahasiswa" placeholder="Type here"
+                    <input type="text" id="nama_mahasiswa" name="Nama_Mahasiswa" placeholder="Type here"
                         class="input input-bordered w-full" required />
                 </div>
                 <div class="mb-4 w-[60%]">
                     <label for="nim" class="block text-sm font-bold text-black ">NIM</label>
-                    <input type="text" id="nim" name="nim" placeholder="Type here"
+                    <input type="text" id="nim" name="NIM" placeholder="Type here"
                         class="input input-bordered w-full " required />
                 </div>
                 <div class="mb-4 w-[60%]">
                     <label for="kelas" class="block text-sm font-bold text-black ">Kelas</label>
-                    <input type="text" id="kelas" name="kelas" placeholder="Type here"
+                    <input type="text" id="kelas" name="Kelas" placeholder="Type here"
                         class="input input-bordered w-full " required />
                 </div>
                 <div class="mb-4 w-[60%]">
                     <label for="angkatan" class="block text-sm font-bold text-black ">Angkatan</label>
-                    <input type="text" id="angkatan" name="angkatan" placeholder="Type here"
+                    <input type="text" id="angkatan" name="Angkatan" placeholder="Type here"
                         class="input input-bordered w-full " required />
                 </div>
                 <div class="w-[40%] mt-4">
