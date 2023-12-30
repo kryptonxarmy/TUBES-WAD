@@ -29,7 +29,7 @@ class UserController extends Controller
     public function edit($id)
     {
         $user = User::findOrFail($id);
-        return view('Admin.updateuser', compact('student'));
+        return view('Admin.updateuser', compact('user'));
     }
     public function update(Request $request, $id)
     {
