@@ -82,3 +82,14 @@ Route::post('/Eprt/store', [EprtController::class, 'store'])->name('eprt.store')
 Route::delete('/dashboardmahasiswa/eprt/{id}', [EprtController::class, 'delete'])->name('eprt.deleteEprt');
 Route::get('/dashboardmahasiswa/eprt/edit/{id}', [EprtController::class, 'edit'])->name('eprt.edit');
 Route::put('/dashboardmahasiswa/eprt/update/{id}', [EprtController::class, 'update'])->name('eprt.update');
+
+//Jurnal Controller
+Route::get('/dashboardmahasiswa/jurnal' , function() {
+    return view('/Mahasiswa/dashboardjurnal');
+});
+Route::get('/dashboardmahasiswa/jurnal/inputjurnal' , function() {
+    return view('/Mahasiswa/inputjurnal');
+});
+Route::get('/dashboardmahasiswa/jurnal/updatejurnal' , function() {
+    return view('/Mahasiswa/updatejurnal');
+});
