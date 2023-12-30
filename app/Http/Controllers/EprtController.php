@@ -8,9 +8,9 @@ use Illuminate\Http\Request;
 class EprtController extends Controller
 {
     public function index(){
-        $eprt = Eprt::all();
-        dd($eprt);
-        return view('Mahasiswa.dashboardeprt', compact('eprt'));
+        $eprts = Eprt::all();
+        // dd($eprt);
+        return view('Mahasiswa.dashboardeprt', compact('eprts'));
     }
 
     public function create()
@@ -22,7 +22,7 @@ class EprtController extends Controller
         $eprt = Eprt::findOrFail($id);
         $eprt->delete();
 
-        return redirect()->route('Mahasiswa.dashboard')->with('success', 'eprt deleted successfully');
+        return redirect()->route('eprt.dashboard')->with('success', 'eprt deleted successfully');
     }
 
     // StudentController.php
@@ -38,7 +38,7 @@ public function update(Request $request, $id)
         $eprt = Eprt::findOrFail($id);
         $eprt->update($request->all());
 
-    return redirect()->route('Mahasiswa.dashboard')->with('success', 'eprt updated successfully');
+    return redirect()->route('eprt.dashboard')->with('success', 'eprt updated successfully');
 }
 
 
