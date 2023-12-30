@@ -36,7 +36,7 @@
                 <form action="/login" method="post" class="w-full">
                     @csrf
                     <div class="mb-3">
-                        <label for="email" class="block mb-2 text-sm font-medium">
+                        <label for="userID" class="block mb-2 text-sm font-medium">
                             NIM/NIP
                         </label>
                         <input name="userID" type="string" id="number" autofocus required

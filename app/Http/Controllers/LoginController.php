@@ -7,13 +7,13 @@ use Illuminate\Support\Facades\Auth;
 
 class LoginController extends Controller
 {
-    public function index() 
+    public function index()
     {
         return view('welcome', [
             'title' => 'Login',
             'active' => 'login'
         ]);
-    }   
+    }
 
     public function authenticate(Request $request)
     {
