@@ -41,3 +41,17 @@ Route::post('/dashboardkaprodi/updateStudent/{id}', [StudentController::class, '
 Route::get('/dashboardkaprodi', [StudentController::class, 'index'])->name('Kaprodi.dashboard');
 
 
+
+// ADMIN
+Route::get('/admin' , function() {
+    return view('/Admin/login');
+});
+Route::get('/dashboardadmin' , function() {
+    return view('/Admin/dashboard');
+});
+Route::get('/dashboardadmin/inputuser' , function() {
+    return view('/Admin/inputuser');
+});
+
+
+
