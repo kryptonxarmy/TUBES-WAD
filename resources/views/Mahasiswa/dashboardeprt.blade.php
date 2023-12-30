@@ -85,13 +85,13 @@ $rows = [
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach ($rows as $student)
+                        @foreach ($eprts as $eprt)
                             <tr class="text-center">
                                 <th>{{ $loop->iteration }}</th>
-                                <td>{{ $student['no_sertif'] }}</td>
-                                <td>{{ $student['nilai'] }}</td>
-                                <td>{{ $student['tgl_berakhir'] }}</td>
-                                <td>{{ $student['judul_ta'] }}</td>
+                                <td>{{ $eprt['No_Sertifikat'] }}</td>
+                                <td>{{ $eprt['Nilai'] }}</td>
+                                <td>{{ $eprt['Tanggal_Berakhir'] }}</td>
+                                <td>{{ $eprt['created_at'] }}</td>
                                 <td class="flex justify-center">
                                     <a href="{{ route('eprt.edit', $student->id) }}" class="mx-2 text-xl">
                                         {{-- UPDATE BUTTON --}}

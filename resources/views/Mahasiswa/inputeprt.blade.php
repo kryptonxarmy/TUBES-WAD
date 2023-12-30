@@ -13,7 +13,7 @@
     <div class="bg-[#E7ECEF] h-[200vh] flex-col flex gap-6" data-theme="light">
         @include('components.navbar')
         <div class="mt-[7em] px-[7em ]">
-            <a href="/dashboardkaprodi">
+            <a href="/dashboardmahasiswa/eprt">
                 <span class="material-symbols-outlined ml-[8em] hover:cursor-pointer">
                     arrow_back
                 </span>

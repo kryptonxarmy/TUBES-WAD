@@ -79,6 +79,6 @@ Route::get('/dashboardmahasiswa/updateeprt' , function() {
 //Erpt Controller
 Route::get('/dashboardmahasiswa/eprt', [EprtController::class, 'index'])->name('eprt.dashboard');
 Route::post('/Eprt/store', [EprtController::class, 'store'])->name('eprt.store');
-Route::delete('/dashboardeprt/{id}', [EprtController::class, 'delete'])->name('eprt.deleteEprt');
+Route::delete('/dashboardmahasiswa/eprt/{id}', [EprtController::class, 'delete'])->name('eprt.deleteEprt');
 Route::get('/dashboardmahasiswa/eprt/edit/{id}', [EprtController::class, 'edit'])->name('eprt.edit');
 Route::put('/dashboardmahasiswa/eprt/update/{id}', [EprtController::class, 'update'])->name('eprt.update');
