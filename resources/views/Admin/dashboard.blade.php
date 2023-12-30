@@ -17,7 +17,8 @@
             <h1 class="text-2xl font-semibold mb-4">Dashboard</h1>
 
             <ul class="">
-                <li class="mb-2 flex items-center gap-4"><a href="#" class="text-gray-300 hover:text-white font-bold">Logout</a> <span
+                <li class="mb-2 flex items-center gap-4"><a href="#"
+                        class="text-gray-300 hover:text-white font-bold">Logout</a> <span
                         class="material-symbols-outlined">
                         logout
                     </span></li>
@@ -30,7 +31,8 @@
 
             <!-- Add User Button -->
             <div class="mb-4">
-                <a href="/dashboardadmin/inputuser" class="bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600">Add User</a>
+                <a href="/dashboardadmin/inputuser"
+                    class="bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600">Add User</a>
             </div>
 
             <!-- User Table -->
@@ -45,21 +47,24 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <!-- Replace the following with dynamic data from your backend -->
-                    <tr class="text-center">
-                        <td class="py-2 px-4 border-b">1</td>
-                        <td class="py-2 px-4 border-b">1202213054</td>
-                        <td class="py-2 px-4 border-b">1202213054</td>
-                        <td class="py-2 px-4 border-b">Mahasiswa</td>
-                        <td class="py-2 px-4 border-b">
-                            <a href="#" class="text-blue-500 hover:underline">Edit</a>
-                            <span class="mx-2">|</span>
-                            <a href="#" class="text-red-500 hover:underline">Delete</a>
-                        </td>
-                    </tr>
-                    <!-- End of dynamic data -->
-
-                    <!-- Add more rows as needed -->
+                    @foreach ($users as $user)
+                        <tr class="text-center">
+                            <td class="py-2 px-4 border-b">{{ $loop->iteration }}</td>
+                            <td class="py-2 px-4 border-b">{{ $user['userID'] }}</td>
+                            <td class="py-2 px-4 border-b">{{ $user['password'] }}</td>
+                            <td class="py-2 px-4 border-b">{{ $user['role'] }}</td>
+                            <td class="py-2 px-4 border-b">
+                                <a href="{{ route('admin.edit', $user->id) }}"
+                                    class="text-blue-500 hover:underline">edit</a>
+                                <span class="mx-2">|</span>
+                                <form action={{ route('admin.deleteUser', $user->id) }} method="post">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button type="submit" class="text-red-500 hover:underline">Delete</button>
+                                </form>
+                            </td>
+                        </tr>
+                    @endforeach
                 </tbody>
             </table>
         </div>

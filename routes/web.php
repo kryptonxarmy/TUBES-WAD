@@ -55,8 +55,8 @@ Route::get('/dashboardadmin/inputuser' , function() {
 });
 
 Route::get('/dashboardadmin', [UserController::class, 'index'])->name('Admin.dashboard');
-Route::post('/Kaprodi/store', [UserController::class, 'store'])->name('admin.store');
-Route::delete('/dashboardadmin/{id}', [UserController::class, 'delete'])->name('Admin.deleteStudent');
+Route::post('/dashboardadmin/store', [UserController::class, 'store'])->name('admin.store');
+Route::delete('/dashboardadmin/{id}', [UserController::class, 'delete'])->name('admin.deleteUser');
 
 // routes/web.php
 
