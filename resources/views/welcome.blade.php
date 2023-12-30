@@ -33,13 +33,13 @@
                 <h1 class="font-extrabold text-lg text-[#274C77] mb-3 text-start mt-7 underline">Login</h1>
             </div>
             <div class="w-full px-8">
-                <form class="w-full" method="post" action="/login">
+                <form action="/login" method="post" class="w-full">
                     @csrf
                     <div class="mb-3">
                         <label for="userID" class="block mb-2 text-sm font-medium">
                             NIM/NIP
                         </label>
-                        <input type="string" id="number" name="userID"
+                        <input name="userID" type="string" id="number" autofocus required
                             class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 shadow-xl "
                             placeholder="120xxxxxx" />
                     </div>
@@ -47,12 +47,12 @@
                         <label for="password" class="block mb-2 text-sm font-medium ">
                             Password
                         </label>
-                        <input type="password" id="password" name="password"
+                        <input name="password" type="password" id="password" required
                             class="bg-gray-50 border border-gray-300 text-gray-900 text-md rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 shadow-xl "
                             required />
                     </div>
                     <div class="w-[80%] mx-auto gap-4 flex flex-col">
-                        <button type="submit" name="submit"
+                        <button type="submit"
                             class="bg-[#4680FF] text-center text-white py-2 rounded-xl">
                             Log in
                         </button>

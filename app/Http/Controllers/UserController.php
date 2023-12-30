@@ -20,8 +20,8 @@ class UserController extends Controller
     }
 
     public function delete($id){
-        $users = User::findOrFail($id);
-        $users->delete();
+        $user = User::findOrFail($id);
+        $user->delete();
 
         return redirect()->route('Admin.dashboard')->with('success', 'Student deleted successfully');
     }
@@ -55,4 +55,10 @@ class UserController extends Controller
 
         return redirect(route('Admin.dashboard'));
     }
+
+    public function showLoginForm()
+    {
+        return view('welcome');
+    }
+
 }

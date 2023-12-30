@@ -31,6 +31,9 @@ Route::get('/dashboardmahasiswa', function () {
     return view('/Mahasiswa/dashboard');
 });
 
+Route::get('/', [LoginController::class, 'index']);
+Route::post('/login', [LoginController::class, 'authenticate']);
+
 Route::get('/dashboardkaprodi', [StudentController::class, 'index'])->name('Kaprodi.dashboard');
 Route::post('/Kaprodi/data', [StudentController::class, 'data'])->name('kaprodi.data');
 Route::delete('/dashboardkaprodi/{id}', [StudentController::class, 'delete'])->name('Kaprodi.deleteStudent');
@@ -56,7 +59,7 @@ Route::get('/dashboardadmin/inputuser' , function() {
 });
 
 Route::get('/dashboardadmin', [UserController::class, 'index'])->name('Admin.dashboard');
-Route::post('/dashboardadmin/store', [UserController::class, 'store'])->name('admin.store');
+Route::post('/Kaprodi/store', [UserController::class, 'store'])->name('admin.store');
 Route::delete('/dashboardadmin/{id}', [UserController::class, 'delete'])->name('admin.deleteUser');
 
 // routes/web.php
