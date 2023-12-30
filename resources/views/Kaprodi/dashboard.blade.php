@@ -88,7 +88,7 @@ $rows = [['id' => 1, 'nama' => 'Ilham Satria', 'nim' => '1201234567', 'kelas' =>
                                 <td>{{ $student['Kelas'] }}</td>
                                 <td>{{ $student['Angkatan'] }}</td>
                                 <td>
-                                    <a href="{{ route('Kaprodi.editStudent', $student->id) }}" class="mx-2 text-xl">
+                                    <a href="{{ route('kaprodi.edit', $student->id) }}" class="mx-2 text-xl">
                                         {{-- UPDATE BUTTON --}}
                                         <span class="material-symbols-outlined text-[#624DE3]">
                                             edit_square
