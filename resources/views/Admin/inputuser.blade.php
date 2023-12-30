@@ -19,12 +19,12 @@
             </a>
             <h3 class="text-xl font-semibold mb-4">Add New User</h3>
         </div>
-        <form action="" method="post">
+        <form action="{{ route('admin.store') }}" method="post">
             @csrf
 
             <div class="mb-4">
                 <label for="nim_nip" class="block text-gray-600 text-sm font-medium">NIM/NIP</label>
-                <input type="text" name="nim_nip" id="nim_nip" class="mt-1 p-2 w-full border rounded">
+                <input type="text" name="userID" id="nim_nip" class="mt-1 p-2 w-full border rounded">
             </div>
 
             <div class="mb-4">

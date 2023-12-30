@@ -1,7 +1,9 @@
 <?php
 
 use App\Http\Controllers\StudentController;
+use App\Http\Controllers\UserController;
 use App\Models\Student;
+use App\Models\User;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -52,5 +54,14 @@ Route::get('/dashboardadmin/inputuser' , function() {
     return view('/Admin/inputuser');
 });
 
+Route::get('/dashboardadmin', [UserController::class, 'index'])->name('Admin.dashboard');
+Route::post('/Kaprodi/store', [UserController::class, 'store'])->name('admin.store');
+Route::delete('/dashboardadmin/{id}', [UserController::class, 'delete'])->name('Admin.deleteStudent');
 
+// routes/web.php
+
+Route::get('/dashboardadmin/edit/{id}', [UserController::class, 'edit'])->name('admin.edit');
+Route::put('/dashboardadmin/update/{id}', [UserController::class, 'update'])->name('admin.update');
+
+Route::get('/dashboardadmin', [UserController::class, 'index'])->name('Admin.dashboard');
 

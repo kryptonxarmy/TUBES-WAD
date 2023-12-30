@@ -9,19 +9,19 @@ class UserController extends Controller
 {
     public function index(){
         $users = User::all();
-        return view('Kaprodi.dashboard', compact('users'));
+        return view('Admin.dashboard', compact('users'));
     }
 
     public function create()
     {
-        return view('Kaprodi.inputfile');
+        return view('Admin.inputuser');
     }
 
     public function delete($id){
         $user = User::findOrFail($id);
         $user->delete();
 
-        return redirect()->route('Kaprodi.dashboard')->with('success', 'Student deleted successfully');
+        return redirect()->route('Admin.dashboard')->with('success', 'Student deleted successfully');
     }
 
     // StudentController.php
@@ -29,7 +29,7 @@ class UserController extends Controller
     public function edit($id)
     {
         $user = User::findOrFail($id);
-        return view('Kaprodi.updatestudent', compact('student'));
+        return view('Admin.updateuser', compact('student'));
     }
     public function update(Request $request, $id)
     {
@@ -37,7 +37,7 @@ class UserController extends Controller
         $user = User::findOrFail($id);
         $user->update($request->all());
 
-        return redirect()->route('Kaprodi.dashboard')->with('success', 'Student updated successfully');
+        return redirect()->route('Admin.dashboard')->with('success', 'Student updated successfully');
     
     }
 
@@ -51,6 +51,6 @@ class UserController extends Controller
             'role' => $data['role'],
         ]);
 
-        return redirect(route('Kaprodi.dashboard'));
+        return redirect(route('Admin.dashboard'));
     }
 }
