@@ -81,4 +81,4 @@ Route::get('/dashboardmahasiswa/eprt', [EprtController::class, 'index'])->name('
 Route::post('/Eprt/store', [EprtController::class, 'store'])->name('eprt.store');
 Route::delete('/dashboardeprt/{id}', [EprtController::class, 'delete'])->name('eprt.deleteEprt');
 Route::get('/dashboardmahasiswa/eprt/edit/{id}', [EprtController::class, 'edit'])->name('eprt.edit');
-Route::put('/dashboardmahasiswa/eprt/update/{id}', [EprtController::class, 'update'])->name('kaprodi.update');
+Route::put('/dashboardmahasiswa/eprt/update/{id}', [EprtController::class, 'update'])->name('eprt.update');
