@@ -18,27 +18,27 @@
                     arrow_back
                 </span>
             </a>
-            <form action="" class="w-full flex flex-col items-center" method="POST" enctype="multipart/form-data">
+            <form action="{{ route('jurnal.store') }}" class="w-full flex flex-col items-center" method="POST" enctype="multipart/form-data">
                 @csrf
                 <h1 class="text-2xl font-bold mb-4">Input Jurnal</h1>
                 <div class="mb-4 w-[60%]">
                     <label for="No_Sertifikat" class="block text-sm font-bold text-black">Judul Jurnal</label>
-                    <input type="text" id="No_Sertifikat" name="No_Sertifikat" placeholder="Type here"
+                    <input type="text" id="No_Sertifikat" name="judul_jurnal" placeholder="Type here"
                         class="input input-bordered w-full" required />
                 </div>
                 <div class="mb-4 w-[60%]">
                     <label for="nilai" class="block text-sm font-bold text-black ">Tanggal Publish</label>
-                    <input type="date" id="nilai" name="Nilai" placeholder="Type here"
+                    <input type="date" id="nilai" name="tgl_publish" placeholder="Type here"
                         class="input input-bordered w-full " required />
                 </div>
                 <div class="mb-4 w-[60%]">
-                    <label for="Tanggal_Berakhir" class="block text-sm font-bold text-black ">Publisher</label>
-                    <input type="text" id="Tanggal_Berakhir" name="Tanggal_Berakhir" placeholder="Type here"
+                    <label for="publisher" class="block text-sm font-bold text-black ">Publisher</label>
+                    <input type="text" id="publisher" name="publisher" placeholder="Type here"
                         class="input input-bordered w-full " required />
                 </div>
                 <div class="mb-4 w-[60%]">
-                    <label for="Tanggal_Berakhir" class="block text-sm font-bold text-black ">Indeks Publikasi Jurnal</label>
-                    <input type="text" id="Tanggal_Berakhir" name="Tanggal_Berakhir" placeholder="Type here"
+                    <label for="indeks_pub" class="block text-sm font-bold text-black ">Indeks Publikasi Jurnal</label>
+                    <input type="text" id="indeks_pub" name="indeks_pub" placeholder="Type here"
                         class="input input-bordered w-full " required />
                 </div>
                 <div class="w-[40%] mt-4">

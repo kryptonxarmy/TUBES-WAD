@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\EprtController;
+use App\Http\Controllers\JurnalController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\UserController;
@@ -93,3 +94,9 @@ Route::get('/dashboardmahasiswa/jurnal/inputjurnal' , function() {
 Route::get('/dashboardmahasiswa/jurnal/updatejurnal' , function() {
     return view('/Mahasiswa/updatejurnal');
 });
+
+Route::get('/dashboardmahasiswa/jurnal', [JurnalController::class, 'index'])->name('jurnal.dashboard');
+Route::post('/Jurnal/store', [JurnalController::class, 'store'])->name('jurnal.store');
+Route::delete('/dashboardmahasiswa/jurnal/{id}', [JurnalController::class, 'delete'])->name('jurnal.deletejurnal');
+Route::get('/dashboardmahasiswa/jurnal/edit/{id}', [JurnalController::class, 'edit'])->name('jurnal.edit');
+Route::put('/dashboardmahasiswa/jurnal/update/{id}', [JurnalController::class, 'update'])->name('jurnal.update');

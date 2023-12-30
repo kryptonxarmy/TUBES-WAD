@@ -10,7 +10,7 @@
 </head>
 
 <?php
-$jurnals = [
+$jurns = [
     ['id' => 1, 'judul_jurnal' => 'No. 18333/SPI3-A/BHS/2022', 'tgl_publish' => '27/05/2024', 'publisher' => 'Erlangga', 'indeks_pub' => 'SINTA I'],
     ['id' => 2, 'judul_jurnal' => 'No. 18333/SPI3-A/BHS/2022', 'tgl_publish' => '27/05/2024', 'publisher' => 'Universitas Indonesia Press', 'indeks_pub' => 'SINTA II'],
     ['id' => 3, 'judul_jurnal' => 'No. 18333/SPI3-A/BHS/2022', 'tgl_publish' => '27/05/2024', 'publisher' => 'LPPM UNAIR', 'indeks_pub' => 'SINTA IV'],
@@ -93,13 +93,13 @@ $jurnals = [
                                 <td>{{ $jurnal['publisher'] }}</td>
                                 <td>{{ $jurnal['indeks_pub'] }}</td>
                                 <td class="flex justify-center">
-                                    <a href="" class="mx-2 text-xl">
+                                    <a href="{{ route('jurnal.edit', $jurnal->id) }}" class="mx-2 text-xl">
                                         {{-- UPDATE BUTTON --}}
                                         <span class="material-symbols-outlined text-[#624DE3]">
                                             edit_square
                                         </span>
                                     </a>
-                                    <form action="" method="post">
+                                    <form action="{{ route('jurnal.deletejurnal', $jurnal->id) }}" method="post">
                                         @csrf
                                         @method('DELETE')
                                         <button type="submit" class="mx-2 text-xl">

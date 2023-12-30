@@ -18,29 +18,29 @@
                     arrow_back
                 </span>
             </a>
-            <form action="/dashboardmahasiswa/eprt/update/{{ $eprt->id }}" method="post" enctype="multipart/form-data"
+            <form action="/dashboardmahasiswa/jurnal/update/{{ $jurnal->id }}" method="post" enctype="multipart/form-data"
                 class="w-full flex flex-col items-center">
                 @csrf
                 @method('PUT')
                 <h1 class="text-2xl font-bold mb-4">Update Jurnal</h1>
                 <div class="mb-4 w-[60%]">
-                    <label for="nama_mahasiswa" class="block text-sm font-bold text-black">Judul Jurnal</label>
-                    <input type="text" id="nama_mahasiswa" name="No_Sertifikat" value="{{ $eprt->No_Sertifikat }}"
+                    <label for="judul_jurnal" class="block text-sm font-bold text-black">Judul Jurnal</label>
+                    <input type="text" id="nama_mahasiswa" name="judul_jurnal" value="{{ $jurnal->judul_jurnal }}"
                         class="input input-bordered w-full" required />
                 </div>
                 <div class="mb-4 w-[60%]">
-                    <label for="nim" class="block text-sm font-bold text-black">Tanggal Publish</label>
-                    <input type="date" id="nim" name="Nilai" value="{{ $eprt->Nilai }}"
+                    <label for="tgl_publish" class="block text-sm font-bold text-black">Tanggal Publish</label>
+                    <input type="date" id="tgl_publish" name="tgl_publish" value="{{ $jurnal->tgl_publish }}"
                         class="input input-bordered w-full" required />
                 </div>
                 <div class="mb-4 w-[60%]">
-                    <label for="kelas" class="block text-sm font-bold text-black">Publisher</label>
-                    <input type="text" id="kelas" name="Tanggal_Berakhir" value="{{ $eprt->Tanggal_Berakhir }}"
+                    <label for="publisher" class="block text-sm font-bold text-black">Publisher</label>
+                    <input type="text" id="publisher" name="publisher" value="{{ $jurnal->publisher }}"
                         class="input input-bordered w-full" required />
                 </div>
                 <div class="mb-4 w-[60%]">
-                    <label for="kelas" class="block text-sm font-bold text-black">Indeks Publikasi Jurnal</label>
-                    <input type="text" id="kelas" name="Tanggal_Berakhir" value="{{ $eprt->Tanggal_Berakhir }}"
+                    <label for="indeks_pub" class="block text-sm font-bold text-black">Indeks Publikasi Jurnal</label>
+                    <input type="text" id="indeks_pub" name="indeks_pub" value="{{ $jurnal->indeks_pub }}"
                         class="input input-bordered w-full" required />
                 </div>
                 <div class="w-[40%] mt-4">
