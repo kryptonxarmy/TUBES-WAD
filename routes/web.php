@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\EprtController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\UserController;
@@ -27,23 +28,16 @@ Route::get('/dashboardkaprodi', function () {
 Route::get('/dashboardkaprodi/inputfile', function () {
     return view('/Kaprodi/inputfile');
 });
-Route::get('/dashboardmahasiswa', function () {
-    return view('/Mahasiswa/dashboard');
-});
 
+//login
 Route::get('/', [LoginController::class, 'index']);
 Route::post('/login', [LoginController::class, 'authenticate']);
 
 Route::get('/dashboardkaprodi', [StudentController::class, 'index'])->name('Kaprodi.dashboard');
 Route::post('/Kaprodi/data', [StudentController::class, 'data'])->name('kaprodi.data');
 Route::delete('/dashboardkaprodi/{id}', [StudentController::class, 'delete'])->name('Kaprodi.deleteStudent');
-
-// routes/web.php
-
 Route::get('/dashboardkaprodi/edit/{id}', [StudentController::class, 'edit'])->name('kaprodi.edit');
 Route::put('/dashboardkaprodi/update/{id}', [StudentController::class, 'update'])->name('kaprodi.update');
-
-Route::get('/dashboardkaprodi', [StudentController::class, 'index'])->name('Kaprodi.dashboard');
 
 
 
@@ -59,15 +53,10 @@ Route::get('/dashboardadmin/inputuser' , function() {
 });
 
 Route::get('/dashboardadmin', [UserController::class, 'index'])->name('Admin.dashboard');
-Route::post('/Kaprodi/store', [UserController::class, 'store'])->name('admin.store');
+Route::post('/Admin/store', [UserController::class, 'store'])->name('admin.store');
 Route::delete('/dashboardadmin/{id}', [UserController::class, 'delete'])->name('admin.deleteUser');
-
-// routes/web.php
-
 Route::get('/dashboardadmin/edit/{id}', [UserController::class, 'edit'])->name('admin.edit');
 Route::put('/dashboardadmin/update/{id}', [UserController::class, 'update'])->name('admin.update');
-
-Route::get('/dashboardadmin', [UserController::class, 'index'])->name('Admin.dashboard');
 
 // login
 Route::get('/', [LoginController::class, 'index']);
@@ -76,18 +65,20 @@ Route::post('/login', [LoginController::class, 'authenticate']);
 
 
 // Mahasiswa
-Route::get('/dashboardmahasiswa' , function() {
-    return view('/Mahasiswa/dashboard');
+Route::get('/dashboardmahasiswa/eprt' , function() {
+    return view('/Mahasiswa/dashboardeprt');
 });
-Route::get('/dashboardmahasiswa/inputtak' , function() {
-    return view('/Mahasiswa/inputtak');
-});
-Route::get('/dashboardmahasiswa/updatetak' , function() {
-    return view('/Mahasiswa/updatetak');
-});
+
 Route::get('/dashboardmahasiswa/inputeprt' , function() {
     return view('/Mahasiswa/inputeprt');
 });
 Route::get('/dashboardmahasiswa/updateeprt' , function() {
     return view('/Mahasiswa/updateeprt');
 });
+
+//Erpt Controller
+Route::get('/dashboardmahasiswa/eprt', [EprtController::class, 'index'])->name('eprt.dashboard');
+Route::post('/Eprt/store', [EprtController::class, 'store'])->name('eprt.store');
+Route::delete('/dashboardeprt/{id}', [EprtController::class, 'delete'])->name('eprt.deleteEprt');
+Route::get('/dashboardmahasiswa/eprt/edit/{id}', [EprtController::class, 'edit'])->name('eprt.edit');
+Route::put('/dashboardmahasiswa/eprt/update/{id}', [EprtController::class, 'update'])->name('kaprodi.update');
