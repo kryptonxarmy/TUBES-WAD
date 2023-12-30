@@ -33,12 +33,13 @@
                 <h1 class="font-extrabold text-lg text-[#274C77] mb-3 text-start mt-7 underline">Login</h1>
             </div>
             <div class="w-full px-8">
-                <form class="w-full">
+                <form action="/login" method="post" class="w-full">
+                    @csrf
                     <div class="mb-3">
                         <label for="email" class="block mb-2 text-sm font-medium">
                             NIM/NIP
                         </label>
-                        <input type="string" id="number"
+                        <input name="userID" type="string" id="number" autofocus required
                             class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 shadow-xl "
                             placeholder="120xxxxxx" />
                     </div>
@@ -46,15 +47,15 @@
                         <label for="password" class="block mb-2 text-sm font-medium ">
                             Password
                         </label>
-                        <input type="password" id="password"
+                        <input name="password" type="password" id="password" required
                             class="bg-gray-50 border border-gray-300 text-gray-900 text-md rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 shadow-xl "
                             required />
                     </div>
                     <div class="w-[80%] mx-auto gap-4 flex flex-col">
-                        <a type="submit" href="/dashboardkaprodi"
+                        <button type="submit"
                             class="bg-[#4680FF] text-center text-white py-2 rounded-xl">
                             Log in
-                        </a>
+                        </button>
                         <div class="flex flex-col">
                             <hr
                                 class="h-px border-t-0 bg-transparent bg-gradient-to-r from-transparent via-neutral-500 to-transparent opacity-25 dark:opacity-100" />

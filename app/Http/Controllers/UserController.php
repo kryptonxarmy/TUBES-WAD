@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
 {
@@ -29,7 +30,7 @@ class UserController extends Controller
     public function edit($id)
     {
         $user = User::findOrFail($id);
-        return view('Admin.updateuser', compact('student'));
+        return view('Admin.updateuser', compact('user'));
     }
     public function update(Request $request, $id)
     {
@@ -43,6 +44,9 @@ class UserController extends Controller
     public function store(Request $request)
     {
         $data = $request->all();
+        // Hash password before saving to the database
+        $data['password'] = Hash::make($data['password']);
+
         User::create([
             'userID' => $data['userID'],
             'password' => $data['password'],
@@ -51,4 +55,10 @@ class UserController extends Controller
 
         return redirect(route('Admin.dashboard'));
     }
+
+    public function showLoginForm()
+    {
+        return view('welcome');
+    }
+
 }
