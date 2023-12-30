@@ -34,7 +34,7 @@ Route::get('/dashboardkaprodi/inputfile', function () {
 Route::get('/', [LoginController::class, 'index']);
 Route::post('/login', [LoginController::class, 'authenticate']);
 
-Route::get('/dashboardkaprodi', [StudentController::class, 'index'])->name('Kaprodi.dashboard');
+Route::get('/dashboardkaprodi', [StudentController::class, 'index'])->name('Kaprodi.dashboard')->middleware('isLogin');
 Route::post('/Kaprodi/data', [StudentController::class, 'data'])->name('kaprodi.data');
 Route::delete('/dashboardkaprodi/{id}', [StudentController::class, 'delete'])->name('Kaprodi.deleteStudent');
 Route::get('/dashboardkaprodi/edit/{id}', [StudentController::class, 'edit'])->name('kaprodi.edit');
@@ -66,16 +66,14 @@ Route::post('/login', [LoginController::class, 'authenticate']);
 
 
 // Mahasiswa
-Route::get('/dashboardmahasiswa/eprt' , function() {
-    return view('/Mahasiswa/dashboardeprt');
-});
 
-Route::get('/dashboardmahasiswa/inputeprt' , function() {
-    return view('/Mahasiswa/inputeprt');
-});
-Route::get('/dashboardmahasiswa/updateeprt' , function() {
-    return view('/Mahasiswa/updateeprt');
-});
+
+// Route::get('/dashboardmahasiswa/inputeprt' , function() {
+//     return view('/Mahasiswa/inputeprt');
+// });
+// Route::get('/dashboardmahasiswa/updateeprt' , function() {
+//     return view('/Mahasiswa/updateeprt');
+// });
 
 //Erpt Controller
 Route::get('/dashboardmahasiswa/eprt', [EprtController::class, 'index'])->name('eprt.dashboard');

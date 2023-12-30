@@ -10,12 +10,7 @@
 </head>
 
 <?php
-$rows = [
-    ['id' => 1, 'no_sertif' => 'No. 18333/SPI3-A/BHS/2022', 'nilai' => '350', 'tgl_berakhir' => '27/05/2024', 'judul_ta' => '2021'],
-    ['id' => 2, 'no_sertif' => 'No. 18333/SPI3-A/BHS/2022', 'nilai' => '397', 'tgl_berakhir' => '27/05/2024', 'judul_ta' => '2021'],
-    ['id' => 3, 'no_sertif' => 'No. 18333/SPI3-A/BHS/2022', 'nilai' => '450', 'tgl_berakhir' => '27/05/2024', 'judul_ta' => '2021'],
-    ['id' => 4, 'no_sertif' => 'No. 18333/SPI3-A/BHS/2022', 'nilai' => '400', 'tgl_berakhir' => '27/05/2024', 'judul_ta' => '2021'],
-    ['id' => 5, 'no_sertif' => 'No. 18333/SPI3-A/BHS/2022', 'nilai' => '320', 'tgl_berakhir' => '27/05/2024', 'judul_ta' => '2021']];
+$rows = [['id' => 1, 'no_sertif' => 'No. 18333/SPI3-A/BHS/2022', 'nilai' => '350', 'tgl_berakhir' => '27/05/2024', 'judul_ta' => '2021'], ['id' => 2, 'no_sertif' => 'No. 18333/SPI3-A/BHS/2022', 'nilai' => '397', 'tgl_berakhir' => '27/05/2024', 'judul_ta' => '2021'], ['id' => 3, 'no_sertif' => 'No. 18333/SPI3-A/BHS/2022', 'nilai' => '450', 'tgl_berakhir' => '27/05/2024', 'judul_ta' => '2021'], ['id' => 4, 'no_sertif' => 'No. 18333/SPI3-A/BHS/2022', 'nilai' => '400', 'tgl_berakhir' => '27/05/2024', 'judul_ta' => '2021'], ['id' => 5, 'no_sertif' => 'No. 18333/SPI3-A/BHS/2022', 'nilai' => '320', 'tgl_berakhir' => '27/05/2024', 'judul_ta' => '2021']];
 ?>
 
 <body>
@@ -37,20 +32,14 @@ $rows = [
                 </span>
                 <h1 class="font-bold text-lg">EPrT</h1>
             </a>
-            <a href="/Dashboard/Kaprodi/setSidang"
+            <a href="/dashboardmahasiswa/jurnal"
                 class="w-full flex hover:cursor-pointer items-center ps-8 gap-2 bg-[#fff] text-[#001247] py-3 rounded-r-xl">
                 <span class="material-symbols-outlined">
                     calendar_month
                 </span>
-                <h1 class="font-bold text-lg">Set Jadwal Sidang</h1>
+                <h1 class="font-bold text-lg">Jurnal</h1>
             </a>
-            <a href="/Dashboard/Kaprodi/laporanSidang"
-                class="w-full flex hover:cursor-pointer items-center ps-8 gap-2 bg-[#fff] text-[#001247] py-3 rounded-r-xl">
-                <span class="material-symbols-outlined">
-                    description
-                </span>
-                <h1 class="font-bold text-lg">Laporan Jadwal Sidang</h1>
-            </a>
+
         </div>
         {{-- {/* ------- SIDEBAR --------- */} --}}
 

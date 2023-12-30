@@ -17,7 +17,7 @@ $rows = [['id' => 1, 'nama' => 'Ilham Satria', 'nim' => '1201234567', 'kelas' =>
     <div class="bg-[#E7ECEF] h-[200vh] flex gap-6" data-theme="light">
         @include('components.navbar')
         {{-- {/* SIDEBAR */} --}}
-        <div class="w-[23vw] relative z-10 flex flex-col gap-3 border-black py-[7em] h-screen">
+        {{-- <div class="w-[23vw] relative z-10 flex flex-col gap-3 border-black py-[7em] h-screen">
             <a href="/Dashboard/Kaprodi/main"
                 class="w-full flex hover:cursor-pointer items-center ps-8 gap-2 bg-[#fff] text-[#001247] py-3 rounded-r-xl">
                 <span class="material-symbols-outlined">
@@ -46,11 +46,11 @@ $rows = [['id' => 1, 'nama' => 'Ilham Satria', 'nim' => '1201234567', 'kelas' =>
                 </span>
                 <h1 class="font-bold text-lg">Laporan Jadwal Sidang</h1>
             </a>
-        </div>
+        </div> --}}
         {{-- {/* ------- SIDEBAR --------- */} --}}
 
         {{-- {/* CENTER */} --}}
-        <div class="w-full mr-10 pt-[7em] flex flex-col gap-4">
+        <div class="w-full px-10 pt-[7em] flex flex-col gap-4">
             {{-- {/* ATAS */} --}}
             <div class="flex justify-between bg-white p-3 rounded-xl">
                 <div class="flex gap-2 items-center">
@@ -65,7 +65,7 @@ $rows = [['id' => 1, 'nama' => 'Ilham Satria', 'nim' => '1201234567', 'kelas' =>
             {{-- {/* ATAS */} --}}
 
             {{-- {/* TABLE */} --}}
-            <div class="overflow-x-auto bg-white rounded-xl" data-theme="light">
+            <div class="overflow-x-auto bg-white border-2 border-gray-400 rounded-xl" data-theme="light">
                 <table class="table table-zebra">
                     {{-- head --}}
                     {{-- (count($students) > 0) --}}

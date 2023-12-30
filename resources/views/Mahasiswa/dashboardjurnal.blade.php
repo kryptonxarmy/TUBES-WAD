@@ -10,12 +10,7 @@
 </head>
 
 <?php
-$jurns = [
-    ['id' => 1, 'judul_jurnal' => 'No. 18333/SPI3-A/BHS/2022', 'tgl_publish' => '27/05/2024', 'publisher' => 'Erlangga', 'indeks_pub' => 'SINTA I'],
-    ['id' => 2, 'judul_jurnal' => 'No. 18333/SPI3-A/BHS/2022', 'tgl_publish' => '27/05/2024', 'publisher' => 'Universitas Indonesia Press', 'indeks_pub' => 'SINTA II'],
-    ['id' => 3, 'judul_jurnal' => 'No. 18333/SPI3-A/BHS/2022', 'tgl_publish' => '27/05/2024', 'publisher' => 'LPPM UNAIR', 'indeks_pub' => 'SINTA IV'],
-    ['id' => 4, 'judul_jurnal' => 'No. 18333/SPI3-A/BHS/2022', 'tgl_publish' => '27/05/2024', 'publisher' => 'Indonesian Institute of Sciences', 'indeks_pub' => 'SINTA I'],
-    ['id' => 5, 'judul_jurnal' => 'No. 18333/SPI3-A/BHS/2022', 'tgl_publish' => '27/05/2024', 'publisher' => 'jurnal siteknik', 'indeks_pub' => 'SINTA I']];
+$jurns = [['id' => 1, 'judul_jurnal' => 'No. 18333/SPI3-A/BHS/2022', 'tgl_publish' => '27/05/2024', 'publisher' => 'Erlangga', 'indeks_pub' => 'SINTA I'], ['id' => 2, 'judul_jurnal' => 'No. 18333/SPI3-A/BHS/2022', 'tgl_publish' => '27/05/2024', 'publisher' => 'Universitas Indonesia Press', 'indeks_pub' => 'SINTA II'], ['id' => 3, 'judul_jurnal' => 'No. 18333/SPI3-A/BHS/2022', 'tgl_publish' => '27/05/2024', 'publisher' => 'LPPM UNAIR', 'indeks_pub' => 'SINTA IV'], ['id' => 4, 'judul_jurnal' => 'No. 18333/SPI3-A/BHS/2022', 'tgl_publish' => '27/05/2024', 'publisher' => 'Indonesian Institute of Sciences', 'indeks_pub' => 'SINTA I'], ['id' => 5, 'judul_jurnal' => 'No. 18333/SPI3-A/BHS/2022', 'tgl_publish' => '27/05/2024', 'publisher' => 'jurnal siteknik', 'indeks_pub' => 'SINTA I']];
 ?>
 
 <body>
@@ -30,27 +25,21 @@ $jurns = [
                 </span>
                 <h1 class="font-bold text-lg">Dashboard</h1>
             </a>
-            <a href="/Dashboard/Kaprodi/laporanSidang"
-                class="w-full flex hover:cursor-pointer items-center ps-8 gap-2 bg-[#001247] text-white py-3 rounded-r-xl">
+            <a href="/dashboardmahasiswa/eprt"
+                class="w-full flex hover:cursor-pointer items-center ps-8 gap-2 bg-white text-[#001247] py-3 rounded-r-xl">
                 <span class="material-symbols-outlined">
                     insert_chart
                 </span>
                 <h1 class="font-bold text-lg">EPrT</h1>
             </a>
-            <a href="/Dashboard/Kaprodi/setSidang"
-                class="w-full flex hover:cursor-pointer items-center ps-8 gap-2 bg-[#fff] text-[#001247] py-3 rounded-r-xl">
+            <a href="/dashboardmahasiswa/jurnal"
+                class="w-full flex hover:cursor-pointer items-center ps-8 gap-2 bg-[#001247] text-white py-3 rounded-r-xl">
                 <span class="material-symbols-outlined">
                     calendar_month
                 </span>
-                <h1 class="font-bold text-lg">Set Jadwal Sidang</h1>
+                <h1 class="font-bold text-lg">Jurnal</h1>
             </a>
-            <a href="/Dashboard/Kaprodi/laporanSidang"
-                class="w-full flex hover:cursor-pointer items-center ps-8 gap-2 bg-[#fff] text-[#001247] py-3 rounded-r-xl">
-                <span class="material-symbols-outlined">
-                    description
-                </span>
-                <h1 class="font-bold text-lg">Laporan Jadwal Sidang</h1>
-            </a>
+
         </div>
         {{-- {/* ------- SIDEBAR --------- */} --}}
 
@@ -88,7 +77,7 @@ $jurns = [
                         @foreach ($jurnals as $jurnal)
                             <tr class="text-center">
                                 <th>{{ $loop->iteration }}</th>
-                                <td>{{ $jurnal['judul_jurnal'] }}</td>
+                                <td class="max-w-xs">{{ $jurnal['judul_jurnal'] }}</td>
                                 <td>{{ $jurnal['tgl_publish'] }}</td>
                                 <td>{{ $jurnal['publisher'] }}</td>
                                 <td>{{ $jurnal['indeks_pub'] }}</td>
