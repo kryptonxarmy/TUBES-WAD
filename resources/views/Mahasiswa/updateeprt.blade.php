@@ -18,26 +18,25 @@
                     arrow_back
                 </span>
             </a>
-            {{-- {{ route('kaprodi.updateStudent', $student->id) }} --}}
-            <form action="/dashboardkaprodi/update/{{ $student->id}}" method="post" enctype="multipart/form-data" class="w-full flex flex-col items-center">
+            <form action="/dashboardmahasiswa/eprt/update/{{ $eprt->id }}" method="post" enctype="multipart/form-data"
+                class="w-full flex flex-col items-center">
                 @csrf
                 @method('PUT')
-                <h1 class="text-2xl font-bold mb-4">Update Data Mahasiswa</h1>
+                <h1 class="text-2xl font-bold mb-4">Update EPrT</h1>
                 <div class="mb-4 w-[60%]">
-                    <label for="nama_mahasiswa" class="block text-sm font-bold text-black">Nama Mahasiswa</label>
-                    <input type="text" id="nama_mahasiswa" name="Nama_Mahasiswa" value="{{ $student->Nama_Mahasiswa }}" class="input input-bordered w-full" required />
+                    <label for="nama_mahasiswa" class="block text-sm font-bold text-black">Nomor Sertifikat</label>
+                    <input type="text" id="nama_mahasiswa" name="No_Sertifikat" value="{{ $eprt->No_Sertifikat }}"
+                        class="input input-bordered w-full" required />
                 </div>
                 <div class="mb-4 w-[60%]">
-                    <label for="nim" class="block text-sm font-bold text-black">NIM</label>
-                    <input type="text" id="nim" name="NIM" value="{{ $student->NIM }}" class="input input-bordered w-full" required />
+                    <label for="nim" class="block text-sm font-bold text-black">Nilai</label>
+                    <input type="text" id="nim" name="Nilai" value="{{ $eprt->Nilai }}"
+                        class="input input-bordered w-full" required />
                 </div>
                 <div class="mb-4 w-[60%]">
-                    <label for="kelas" class="block text-sm font-bold text-black">Kelas</label>
-                    <input type="text" id="kelas" name="Kelas" value="{{ $student->Kelas }}" class="input input-bordered w-full" required />
-                </div>
-                <div class="mb-4 w-[60%]">
-                    <label for="angkatan" class="block text-sm font-bold text-black">Angkatan</label>
-                    <input type="text" id="angkatan" name="Angkatan" value="{{ $student->Angkatan }}" class="input input-bordered w-full" required />
+                    <label for="kelas" class="block text-sm font-bold text-black">Tanggal Berakhir</label>
+                    <input type="date" id="kelas" name="Tanggal_Berakhir" value="{{ $eprt->Tanggal_Berakhir }}"
+                        class="input input-bordered w-full" required />
                 </div>
                 <div class="w-[40%] mt-4">
                     <button type="submit" class="btn btn-primary w-full">Submit</button>
