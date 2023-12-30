@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\LoginController;
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\UserController;
 use App\Models\Student;
@@ -17,9 +18,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 Route::get('/dashboardkaprodi', function () {
     return view('/Kaprodi/dashboard');
 });
@@ -29,6 +30,9 @@ Route::get('/dashboardkaprodi/inputfile', function () {
 Route::get('/dashboardmahasiswa', function () {
     return view('/Mahasiswa/dashboard');
 });
+
+Route::get('/', [LoginController::class, 'index']);
+Route::post('/login', [LoginController::class, 'authenticate']);
 
 Route::get('/dashboardkaprodi', [StudentController::class, 'index'])->name('Kaprodi.dashboard');
 Route::post('/Kaprodi/data', [StudentController::class, 'data'])->name('kaprodi.data');
@@ -65,3 +69,25 @@ Route::put('/dashboardadmin/update/{id}', [UserController::class, 'update'])->na
 
 Route::get('/dashboardadmin', [UserController::class, 'index'])->name('Admin.dashboard');
 
+// login
+Route::get('/', [LoginController::class, 'index']);
+Route::post('/login', [LoginController::class, 'authenticate']);
+
+
+
+// Mahasiswa
+Route::get('/dashboardmahasiswa' , function() {
+    return view('/Mahasiswa/dashboard');
+});
+Route::get('/dashboardmahasiswa/inputtak' , function() {
+    return view('/Mahasiswa/inputtak');
+});
+Route::get('/dashboardmahasiswa/updatetak' , function() {
+    return view('/Mahasiswa/updatetak');
+});
+Route::get('/dashboardmahasiswa/inputeprt' , function() {
+    return view('/Mahasiswa/inputeprt');
+});
+Route::get('/dashboardmahasiswa/updateeprt' , function() {
+    return view('/Mahasiswa/updateeprt');
+});
