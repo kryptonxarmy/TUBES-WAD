@@ -93,7 +93,7 @@ $rows = [
                                 <td>{{ $eprt['Tanggal_Berakhir'] }}</td>
                                 <td>{{ $eprt['created_at'] }}</td>
                                 <td class="flex justify-center">
-                                    <a href="{{ route('eprt.edit', $student->id) }}" class="mx-2 text-xl">
+                                    <a href="{{ route('eprt.edit', $eprt->id) }}" class="mx-2 text-xl">
                                         {{-- UPDATE BUTTON --}}
                                         <span class="material-symbols-outlined text-[#624DE3]">
                                             edit_square
