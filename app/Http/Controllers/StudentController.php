@@ -31,15 +31,9 @@ class StudentController extends Controller
     $student = Student::findOrFail($id);
     return view('Kaprodi.updatestudent', compact('student'));
 }
+
 public function update(Request $request, $id)
 {
-    $request->validate([
-        'Nama_Mahasiswa' => 'required',
-        'NIM' => 'required',
-        'Kelas' => 'required',
-        'Angkatan' => 'required',
-    ]);
-
         $student = Student::findOrFail($id);
         $student->update($request->all());
 
