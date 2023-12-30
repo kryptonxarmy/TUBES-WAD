@@ -19,7 +19,7 @@ class UserController extends Controller
 
     public function delete($id){
         $user = User::findOrFail($id);
-        $user->delete();
+        $user -> delete();
 
         return redirect()->route('Admin.dashboard')->with('success', 'Student deleted successfully');
     }
@@ -29,7 +29,7 @@ class UserController extends Controller
     public function edit($id)
     {
         $user = User::findOrFail($id);
-        return view('Admin.updateuser', compact('student'));
+        return view('Admin.updateuser', compact('users'));
     }
     public function update(Request $request, $id)
     {
