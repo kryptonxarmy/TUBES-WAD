@@ -21,7 +21,7 @@ class EprtController extends Controller
         $eprt = Eprt::findOrFail($id);
         $eprt->delete();
 
-        return redirect()->route('Mahasiswa.dashboard')->with('success', 'eprt$eprt deleted successfully');
+        return redirect()->route('Mahasiswa.dashboard')->with('success', 'eprt deleted successfully');
     }
 
     // StudentController.php
