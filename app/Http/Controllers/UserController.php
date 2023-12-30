@@ -2,14 +2,14 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Student;
+use App\Models\User;
 use Illuminate\Http\Request;
 
-class StudentController extends Controller
+class UserController extends Controller
 {
     public function index(){
-        $students = Student::all();
-        return view('Kaprodi.dashboard', compact('students'));
+        $users = User::all();
+        return view('Kaprodi.dashboard', compact('users'));
     }
 
     public function create()
@@ -18,8 +18,8 @@ class StudentController extends Controller
     }
 
     public function delete($id){
-        $student = Student::findOrFail($id);
-        $student->delete();
+        $user = User::findOrFail($id);
+        $user->delete();
 
         return redirect()->route('Kaprodi.dashboard')->with('success', 'Student deleted successfully');
     }
@@ -28,28 +28,27 @@ class StudentController extends Controller
 
     public function edit($id)
     {
-        $student = Student::findOrFail($id);
+        $user = User::findOrFail($id);
         return view('Kaprodi.updatestudent', compact('student'));
     }
     public function update(Request $request, $id)
     {
 
-        $student = Student::findOrFail($id);
-        $student->update($request->all());
+        $user = User::findOrFail($id);
+        $user->update($request->all());
 
         return redirect()->route('Kaprodi.dashboard')->with('success', 'Student updated successfully');
     
     }
 
 
-    public function data(Request $request)
+    public function store(Request $request)
     {
         $data = $request->all();
-        Student::create([
-            'Nama_Mahasiswa' => $data['Nama_Mahasiswa'],
-            'NIM' => $data['NIM'],
-            'Kelas' => $data['Kelas'],
-            'Angkatan' => $data['Angkatan']
+        User::create([
+            'userID' => $data['userID'],
+            'password' => $data['password'],
+            'role' => $data['role'],
         ]);
 
         return redirect(route('Kaprodi.dashboard'));
