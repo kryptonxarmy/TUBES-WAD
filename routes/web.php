@@ -20,6 +20,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+
 Route::get('/dashboardkaprodi', function () {
     return view('/Kaprodi/dashboard');
 });
@@ -28,7 +32,7 @@ Route::get('/dashboardkaprodi/inputfile', function () {
 });
 
 //login
-Route::get('/', [LoginController::class, 'index'])->name('login ');
+Route::get('/', [LoginController::class, 'index'])->name('login');
 Route::post('/', [LoginController::class, 'authenticate']);
 Route::post('/logout', [LoginController::class, 'logout']);
 
@@ -55,7 +59,7 @@ Route::get('/dashboardadmin', [UserController::class, 'index'])->name('Admin.das
 Route::post('/Admin/store', [UserController::class, 'store'])->name('admin.store');
 Route::delete('/dashboardadmin/{id}', [UserController::class, 'delete'])->name('admin.deleteUser');
 Route::get('/dashboardadmin/edit/{id}', [UserController::class, 'edit'])->name('admin.edit');
-Route::put('/dashboardadmin/update/{id}', [UserController::class, 'update'])->name('admin.update');
+Route::post('/dashboardadmin/update/{id}', [UserController::class, 'update'])->name('admin.update');
 
 // login
 Route::get('/', [LoginController::class, 'index'])->name('login');
