@@ -19,22 +19,24 @@
             </a>
             <h3 class="text-xl font-semibold mb-4">Update User</h3>
         </div>
-        <form action="/dashboardadmin/update/{{ $user->id}}" method="post">
+        <form action="/dashboardadmin/update/{{ $user->id }}" method="post">
             @csrf
-            @method('PUT')
             <div class="mb-4">
                 <label for="nim_nip" class="block text-gray-600 text-sm font-medium">NIM/NIP</label>
-                <input type="text" name="userID" id="nim_nip" value="{{ $user->userID }}" class="mt-1 p-2 w-full border rounded">
+                <input type="text" name="userID" id="nim_nip" value="{{ $user->userID }}"
+                    class="mt-1 p-2 w-full border rounded">
             </div>
 
             <div class="mb-4">
                 <label for="password" class="block text-gray-600 text-sm font-medium">Password</label>
-                <input type="password" name="password" id="password" value="{{ $user->password }}" class="mt-1 p-2 w-full border rounded">
+                <input type="password" name="password" id="password" value="{{ $user->password }}"
+                    class="mt-1 p-2 w-full border rounded">
             </div>
 
             <div class="mb-4">
                 <label for="role" class="block text-gray-600 text-sm font-medium">Role</label>
-                <select name="role" id="role" value="{{ $user->role }}" class="mt-1 p-2 w-full border rounded">
+                <select name="role" id="role" value="{{ $user->role }}"
+                    class="mt-1 p-2 w-full border rounded">
                     <option value="mahasiswa">Mahasiswa</option>
                     <option value="dosen">Dosen</option>
                     <!-- Add more roles as needed -->

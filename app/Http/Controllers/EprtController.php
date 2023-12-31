@@ -32,6 +32,11 @@ class EprtController extends Controller
     $eprt = Eprt::findOrFail($id);
     return view('Mahasiswa.updateeprt', compact('eprt'));
 }
+//     public function edit($id)
+// {
+//     $admin = Admin::findOrFail($id);
+//     return view('Admin.index', compact('admin'));
+// }
 
 public function update(Request $request, $id)
 {
