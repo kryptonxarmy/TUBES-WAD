@@ -31,17 +31,23 @@
         <div class="flex gap-4">
             <span class="material-symbols-outlined">
                 keyboard_arrow_down
-                </span>
-            <h1 class="font-semibold">AHMAD SYAHID DANU WARDANA</h1>
+            </span>
+            @auth
+                <h1 class="font-semibold">{{ auth()->user()->userID }}</h1>
+            @endauth
             <a href="/Dashboard/Mahasiswa/profile">
                 <img src="https://miro.medium.com/v2/resize:fit:845/1*Y4Hje9Txi_eDoBzq_HAiRQ.jpeg" alt="pp"
                     class="rounded-full h-7 bg-cover w-7" />
             </a>
-            <a href="/">
-                <span class="material-symbols-outlined">
-                    logout
-                </span>
-            </a>
+            <form action="/logout" method="post">
+                @csrf
+                <button type="submit">
+                    <span class="material-symbols-outlined">
+                        logout
+                    </span>
+                </button>
+            </form>
+
         </div>
     </div>
 </body>

@@ -33,7 +33,7 @@
                 <h1 class="font-extrabold text-lg text-[#274C77] mb-3 text-start mt-7 underline">Login</h1>
             </div>
             <div class="w-full px-8">
-                <form action="/login" method="post" class="w-full">
+                <form action="/" method="post" class="w-full">
                     @csrf
                     <div class="mb-3">
                         <label for="userID" class="block mb-2 text-sm font-medium">

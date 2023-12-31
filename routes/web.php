@@ -28,10 +28,11 @@ Route::get('/dashboardkaprodi/inputfile', function () {
 });
 
 //login
-Route::get('/', [LoginController::class, 'index']);
-Route::post('/login', [LoginController::class, 'authenticate']);
+Route::get('/', [LoginController::class, 'index'])->name('login ');
+Route::post('/', [LoginController::class, 'authenticate']);
+Route::post('/logout', [LoginController::class, 'logout']);
 
-Route::get('/dashboardkaprodi', [StudentController::class, 'index'])->name('Kaprodi.dashboard')->middleware('isLogin');
+Route::get('/dashboardkaprodi', [StudentController::class, 'index'])->name('Kaprodi.dashboard')->middleware('auth');
 Route::post('/Kaprodi/data', [StudentController::class, 'data'])->name('kaprodi.data');
 Route::delete('/dashboardkaprodi/{id}', [StudentController::class, 'delete'])->name('Kaprodi.deleteStudent');
 Route::get('/dashboardkaprodi/edit/{id}', [StudentController::class, 'edit'])->name('kaprodi.edit');
@@ -57,31 +58,21 @@ Route::get('/dashboardadmin/edit/{id}', [UserController::class, 'edit'])->name('
 Route::put('/dashboardadmin/update/{id}', [UserController::class, 'update'])->name('admin.update');
 
 // login
-Route::get('/', [LoginController::class, 'index']);
+Route::get('/', [LoginController::class, 'index'])->name('login');
 Route::post('/login', [LoginController::class, 'authenticate']);
 
 
 
 // Mahasiswa
 //Erpt Controller
-Route::get('/dashboardmahasiswa/eprt', [EprtController::class, 'index'])->name('eprt.dashboard');
+Route::get('/dashboardmahasiswa/eprt', [EprtController::class, 'index'])->name('eprt.dashboard')->middleware('auth');
 Route::post('/Eprt/store', [EprtController::class, 'store'])->name('eprt.store');
 Route::delete('/dashboardmahasiswa/eprt/{id}', [EprtController::class, 'delete'])->name('eprt.deleteEprt');
 Route::get('/dashboardmahasiswa/eprt/edit/{id}', [EprtController::class, 'edit'])->name('eprt.edit');
 Route::put('/dashboardmahasiswa/eprt/update/{id}', [EprtController::class, 'update'])->name('eprt.update');
 
 //Jurnal Controller
-Route::get('/dashboardmahasiswa/jurnal' , function() {
-    return view('/Mahasiswa/dashboardjurnal');
-});
-Route::get('/dashboardmahasiswa/jurnal/inputjurnal' , function() {
-    return view('/Mahasiswa/inputjurnal');
-});
-Route::get('/dashboardmahasiswa/jurnal/updatejurnal' , function() {
-    return view('/Mahasiswa/updatejurnal');
-});
-
-Route::get('/dashboardmahasiswa/jurnal', [JurnalController::class, 'index'])->name('jurnal.dashboard');
+Route::get('/dashboardmahasiswa/jurnal', [JurnalController::class, 'index'])->name('jurnal.dashboard')->middleware('auth');
 Route::post('/Jurnal/store', [JurnalController::class, 'store'])->name('jurnal.store');
 Route::delete('/dashboardmahasiswa/jurnal/{id}', [JurnalController::class, 'delete'])->name('jurnal.deletejurnal');
 Route::get('/dashboardmahasiswa/jurnal/edit/{id}', [JurnalController::class, 'edit'])->name('jurnal.edit');
