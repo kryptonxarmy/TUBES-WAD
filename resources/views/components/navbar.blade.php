@@ -33,7 +33,7 @@
                 keyboard_arrow_down
             </span>
             @auth
-                <h1 class="font-semibold">{{ auth()->user()->userID }}</h1>
+                <h1 class="font-semibold">{{ auth()->user()->fullname }}</h1>
             @endauth
             <a href="/Dashboard/Mahasiswa/profile">
                 <img src="https://miro.medium.com/v2/resize:fit:845/1*Y4Hje9Txi_eDoBzq_HAiRQ.jpeg" alt="pp"

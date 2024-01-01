@@ -41,6 +41,8 @@
                     <tr>
                         <th class="py-2 px-4 border-b">No</th>
                         <th class="py-2 px-4 border-b">NIM/NIP</th>
+                        <th class="py-2 px-4 border-b">Nama Lengkap</th>
+                        <th class="py-2 px-4 border-b">Kelas</th>
                         <th class="py-2 px-4 border-b">Password</th>
                         <th class="py-2 px-4 border-b">Role</th>
                         <th class="py-2 px-4 border-b">Actions</th>
@@ -51,7 +53,9 @@
                         <tr class="text-center">
                             <td class="py-2 px-4 border-b">{{ $loop->iteration }}</td>
                             <td class="py-2 px-4 border-b">{{ $user['userID'] }}</td>
-                            <td class="py-2 px-4 border-b">{{ $user['password'] }}</td>
+                            <td class="py-2 px-4 border-b">{{ $user['fullname'] }}</td>
+                            <td class="py-2 px-4 border-b">{{ $user['kelas'] }}</td>
+                            <td class="py-2 px-4 border-b truncate max-w-xs">{{ $user['password'] }}</td>
                             <td class="py-2 px-4 border-b">{{ $user['role'] }}</td>
                             <td class="py-2 px-4 border-b">
                                 <a href="{{ route('admin.edit', $user->id) }}"
