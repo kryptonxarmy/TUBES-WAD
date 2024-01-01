@@ -10,10 +10,10 @@ use Illuminate\Support\Facades\Hash;
 class UserController extends Controller
 {
     public function index(){
-        $users = User::all();
-        // dd($users);
+        $users = User::where('role', '!=', 'admin')->get();
         return view('Admin.dashboard', compact('users'));
     }
+    
 
     public function create()
     {
