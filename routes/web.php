@@ -20,30 +20,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
-
+//Dosen
 Route::get('/dashboardkaprodi', function () {
     return view('/Kaprodi/dashboard');
 });
 Route::get('/dashboardkaprodi/inputfile', function () {
     return view('/Kaprodi/inputfile');
 });
-
-
-//login
-Route::get('/', [LoginController::class, 'index'])->name('login');
-Route::post('/', [LoginController::class, 'authenticate']);
-Route::post('/logout', [LoginController::class, 'logout']);
-
-Route::get('/dashboardkaprodi', [StudentController::class, 'index'])->name('Kaprodi.dashboard')->middleware('auth');
-Route::post('/Kaprodi/data', [StudentController::class, 'data'])->name('kaprodi.data');
-Route::delete('/dashboardkaprodi/{id}', [StudentController::class, 'delete'])->name('Kaprodi.deleteStudent');
-Route::get('/dashboardkaprodi/edit/{id}', [StudentController::class, 'edit'])->name('kaprodi.edit');
-Route::put('/dashboardkaprodi/update/{id}', [StudentController::class, 'update'])->name('kaprodi.update');
-
-
 
 // ADMIN
 Route::get('/admin' , function() {
@@ -56,17 +39,35 @@ Route::get('/dashboardadmin/inputuser' , function() {
     return view('/Admin/inputuser');
 });
 
+//Mahasiswa
+Route::get('/dashboardmahasiswa/inputeprt', function () {
+    return view('/Mahasiswa/inputeprt');
+});
+Route::get('/dashboardmahasiswa/jurnal/inputjurnal', function () {
+    return view('/Mahasiswa/inputjurnal');
+});
+
+
+//login
+Route::get('/', [LoginController::class, 'index'])->name('login');
+Route::post('/', [LoginController::class, 'authenticate']);
+Route::post('/login', [LoginController::class, 'authenticate']);
+Route::post('/logout', [LoginController::class, 'logout']);
+
+//Dosen
+Route::get('/dashboardkaprodi', [StudentController::class, 'index'])->name('Kaprodi.dashboard')->middleware('auth');
+Route::post('/Kaprodi/data', [StudentController::class, 'data'])->name('kaprodi.data');
+Route::delete('/dashboardkaprodi/{id}', [StudentController::class, 'delete'])->name('Kaprodi.deleteStudent');
+Route::get('/dashboardkaprodi/edit/{id}', [StudentController::class, 'edit'])->name('kaprodi.edit');
+Route::put('/dashboardkaprodi/update/{id}', [StudentController::class, 'update'])->name('kaprodi.update');
+
+
+//Admin
 Route::get('/dashboardadmin', [UserController::class, 'index'])->name('Admin.dashboard');
 Route::post('/Admin/store', [UserController::class, 'store'])->name('admin.store');
 Route::delete('/dashboardadmin/{id}', [UserController::class, 'delete'])->name('admin.deleteUser');
 Route::get('/dashboardadmin/edit/{id}', [UserController::class, 'edit'])->name('admin.edit');
 Route::post('/dashboardadmin/update/{id}', [UserController::class, 'update'])->name('admin.update');
-
-// login
-Route::get('/', [LoginController::class, 'index'])->name('login');
-Route::post('/login', [LoginController::class, 'authenticate']);
-
-
 
 // Mahasiswa
 //Erpt Controller
@@ -75,10 +76,6 @@ Route::post('/Eprt/store', [EprtController::class, 'store'])->name('eprt.store')
 Route::delete('/dashboardmahasiswa/eprt/{id}', [EprtController::class, 'delete'])->name('eprt.deleteEprt');
 Route::get('/dashboardmahasiswa/eprt/edit/{id}', [EprtController::class, 'edit'])->name('eprt.edit');
 Route::put('/dashboardmahasiswa/eprt/update/{id}', [EprtController::class, 'update'])->name('eprt.update');
-Route::get('/dashboardmahasiswa/inputeprt', function () {
-    return view('/Mahasiswa/inputeprt');
-});
-
 
 //Jurnal Controller
 Route::get('/dashboardmahasiswa/jurnal', [JurnalController::class, 'index'])->name('jurnal.dashboard')->middleware('auth');
@@ -86,6 +83,3 @@ Route::post('/Jurnal/store', [JurnalController::class, 'store'])->name('jurnal.s
 Route::delete('/dashboardmahasiswa/jurnal/{id}', [JurnalController::class, 'delete'])->name('jurnal.deletejurnal');
 Route::get('/dashboardmahasiswa/jurnal/edit/{id}', [JurnalController::class, 'edit'])->name('jurnal.edit');
 Route::put('/dashboardmahasiswa/jurnal/update/{id}', [JurnalController::class, 'update'])->name('jurnal.update');
-Route::get('/dashboardmahasiswa/jurnal/inputjurnal', function () {
-    return view('/Mahasiswa/inputjurnal');
-});
