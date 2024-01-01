@@ -17,6 +17,15 @@
             <h1 class="text-2xl font-semibold mb-4">Dashboard</h1>
 
             <ul class="">
+                <form action="/logout" method="post">
+                    @csrf
+                    <button type="submit" class="mb-2 flex items-center gap-4">
+                        <h1> </h1>
+                        <span class="material-symbols-outlined">
+                            logout
+                        </span>
+                    </button>
+                </form>
                 <li class="mb-2 flex items-center gap-4"><a href="#"
                         class="text-gray-300 hover:text-white font-bold">Logout</a> <span
                         class="material-symbols-outlined">
