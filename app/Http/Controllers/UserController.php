@@ -51,6 +51,8 @@ class UserController extends Controller
         User::create([
             'userID' => $data['userID'],
             'password' => $data['password'],
+            'fullname' => $data['fullname'],
+            'kelas' => $data['kelas'],
             'role' => $data['role'],
         ]);
 
