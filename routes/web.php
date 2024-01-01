@@ -70,6 +70,10 @@ Route::get('/dashboardadmin/edit/{id}', [UserController::class, 'edit'])->name('
 Route::post('/dashboardadmin/update/{id}', [UserController::class, 'update'])->name('admin.update');
 
 // Mahasiswa
+Route::get('/dashboardmahasiswa', function () {
+    return view('/Mahasiswa/dashboard');
+});
+
 //Erpt Controller
 Route::get('/dashboardmahasiswa/eprt', [EprtController::class, 'index'])->name('eprt.dashboard')->middleware('auth');
 Route::post('/Eprt/store', [EprtController::class, 'store'])->name('eprt.store');

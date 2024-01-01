@@ -45,8 +45,8 @@
             <div class="mb-4">
                 <label for="role" class="block text-gray-600 text-sm font-medium">Role</label>
                 <select name="role" id="role" class="mt-1 p-2 w-full border rounded">
-                    <option value="mahasiswa">Mahasiswa</option>
-                    <option value="dosen">Dosen</option>
+                    <option value="Mahasiswa">Mahasiswa</option>
+                    <option value="Dosen">Dosen</option>
                     <!-- Add more roles as needed -->
                 </select>
             </div>

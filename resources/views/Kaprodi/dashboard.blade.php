@@ -54,7 +54,15 @@ $rows = [['id' => 1, 'nama' => 'Ilham Satria', 'nim' => '1201234567', 'kelas' =>
             {{-- {/* ATAS */} --}}
             <div class="flex justify-between bg-white p-3 rounded-xl">
                 <div class="flex gap-2 items-center">
-
+                    <div class="flex flex-col gap-2">
+                        <h1 class="font-semibold text-xl">NIP <?php for ($i = 0; $i < 28; $i++) {
+                            echo '&nbsp;';
+                        } ?>: {{ auth()->user()->userID }}</h1>
+                        <h1 class="font-semibold text-xl">Dosen Wali<?php for ($i = 0; $i < 16; $i++) {
+                            echo '&nbsp;';
+                        } ?>: {{ auth()->user()->kelas }}
+                        </h1>
+                    </div>
                 </div>
                 <div class="flex gap-2 items-center">
                     <a href="/dashboardkaprodi/inputfile">
@@ -67,8 +75,6 @@ $rows = [['id' => 1, 'nama' => 'Ilham Satria', 'nim' => '1201234567', 'kelas' =>
             {{-- {/* TABLE */} --}}
             <div class="overflow-x-auto bg-white border-2 border-gray-400 rounded-xl" data-theme="light">
                 <table class="table table-zebra">
-                    {{-- head --}}
-                    {{-- (count($students) > 0) --}}
                     <thead>
                         <tr class="text-center text-black font-extrabold">
                             <th>No</th>
@@ -81,30 +87,32 @@ $rows = [['id' => 1, 'nama' => 'Ilham Satria', 'nim' => '1201234567', 'kelas' =>
                     </thead>
                     <tbody>
                         @foreach ($students as $student)
-                            <tr class="text-center">
-                                <th>{{ $loop->iteration }}</th>
-                                <td>{{ $student['Nama_Mahasiswa'] }}</td>
-                                <td>{{ $student['NIM'] }}</td>
-                                <td>{{ $student['Kelas'] }}</td>
-                                <td>{{ $student['Angkatan'] }}</td>
-                                <td>
-                                    <a href="{{ route('kaprodi.edit', $student->id) }}" class="mx-2 text-xl">
-                                        {{-- UPDATE BUTTON --}}
-                                        <span class="material-symbols-outlined text-[#624DE3]">
-                                            edit_square
-                                        </span>
-                                    </a>
-                                    <form action="{{ route('Kaprodi.deleteStudent', $student->id) }}" method="post">
-                                        @csrf
-                                        @method('DELETE')
-                                        <button type="submit" class="mx-2 text-xl">
-                                            <span class="material-symbols-outlined text-[#A30D11]">
-                                                delete
+                            @if ($student['Kelas'] == auth()->user()->kelas)
+                                <tr class="text-center">
+                                    <th>{{ $loop->iteration }}</th>
+                                    <td>{{ $student['Nama_Mahasiswa'] }}</td>
+                                    <td>{{ $student['NIM'] }}</td>
+                                    <td>{{ $student['Kelas'] }}</td>
+                                    <td>{{ $student['Angkatan'] }}</td>
+                                    <td>
+                                        <a href="{{ route('kaprodi.edit', $student->id) }}" class="mx-2 text-xl">
+                                            {{-- UPDATE BUTTON --}}
+                                            <span class="material-symbols-outlined text-[#624DE3]">
+                                                edit_square
                                             </span>
-                                        </button>
-                                    </form>
-                                </td>
-                            </tr>
+                                        </a>
+                                        <form action="{{ route('Kaprodi.deleteStudent', $student->id) }}" method="post">
+                                            @csrf
+                                            @method('DELETE')
+                                            <button type="submit" class="mx-2 text-xl">
+                                                <span class="material-symbols-outlined text-[#A30D11]">
+                                                    delete
+                                                </span>
+                                            </button>
+                                        </form>
+                                    </td>
+                                </tr>
+                            @endif
                         @endforeach
                     </tbody>
                 </table>

@@ -44,6 +44,7 @@ public function update(Request $request, $id)
     public function data(Request $request)
     {
         $data = $request->all();
+        // dd($data);
         Student::create([
             'Nama_Mahasiswa' => $data['Nama_Mahasiswa'],
             'NIM' => $data['NIM'],
