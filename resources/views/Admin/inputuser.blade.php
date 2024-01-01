@@ -33,6 +33,16 @@
             </div>
 
             <div class="mb-4">
+                <label for="fullname" class="block text-gray-600 text-sm font-medium">Nama Lengkap</label>
+                <input type="text" name="fullname" id="fullname" class="mt-1 p-2 w-full border rounded">
+            </div>
+
+            <div class="mb-4">
+                <label for="kelas" class="block text-gray-600 text-sm font-medium">Kelas</label>
+                <input type="text" name="kelas" id="kelas" placeholder="SI-XX-XX" class="mt-1 p-2 w-full border rounded">
+            </div>
+
+            <div class="mb-4">
                 <label for="role" class="block text-gray-600 text-sm font-medium">Role</label>
                 <select name="role" id="role" class="mt-1 p-2 w-full border rounded">
                     <option value="mahasiswa">Mahasiswa</option>
