@@ -18,14 +18,14 @@ $rows = [['id' => 1, 'no_sertif' => 'No. 18333/SPI3-A/BHS/2022', 'nilai' => '350
         @include('components.navbar')
         {{-- {/* SIDEBAR */} --}}
         <div class="w-[23vw] relative z-10 flex flex-col gap-3 border-black py-[7em] h-screen">
-            <a href="/Dashboard/Kaprodi/main"
+            <a href="/dashbaordmahasiswa"
                 class="w-full flex hover:cursor-pointer items-center ps-8 gap-2 bg-[#001247] text-[#fff] py-3 rounded-r-xl">
                 <span class="material-symbols-outlined">
                     home
                 </span>
                 <h1 class="font-bold text-lg">Dashboard</h1>
             </a>
-            <a href="/Dashboard/Kaprodi/laporanSidang"
+            <a href="/dashboardmahasiswa/eprt"
                 class="w-full flex hover:cursor-pointer items-center ps-8 gap-2 bg-[#fff] text-[#001247] py-3 rounded-r-xl">
                 <span class="material-symbols-outlined">
                     insert_chart
