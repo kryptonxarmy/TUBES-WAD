@@ -68,15 +68,6 @@ Route::post('/login', [LoginController::class, 'authenticate']);
 
 
 // Mahasiswa
-
-
-// Route::get('/dashboardmahasiswa/inputeprt' , function() {
-//     return view('/Mahasiswa/inputeprt');
-// });
-// Route::get('/dashboardmahasiswa/updateeprt' , function() {
-//     return view('/Mahasiswa/updateeprt');
-// });
-
 //Erpt Controller
 Route::get('/dashboardmahasiswa/eprt', [EprtController::class, 'index'])->name('eprt.dashboard')->middleware('auth');
 Route::post('/Eprt/store', [EprtController::class, 'store'])->name('eprt.store');
